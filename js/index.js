@@ -32,22 +32,82 @@ $(function () {
     alert('该功能模块暂未开放，敬请期待')
   })
   // 换一批
+  var fa = 0;
   $('.recommend_top span').on('click', function () {
-    $(this).parent().siblings('.recommend_bottom').children('img').prop('src', 'upload/recommend2.gif')
+    if (fa === 0) {
+      $(this).parent().siblings('.recommend_bottom').children('img').prop('src', 'upload/recommend2.gif');
+      fa = 1;
+    } else if (fa === 1) {
+      $(this).parent().siblings('.recommend_bottom').children('img').prop('src', 'upload/recommend3.gif');
+      fa = 2;
+    } else {
+      $(this).parent().siblings('.recommend_bottom').children('img').prop('src', 'upload/recommend1.gif');
+      fa = 0;
+    }
   })
   // ajax请求数据
   $.ajax({
-    url: 'https://api-gw.onebound.cn/taobao/item_search/',
-    data: {
-      q: '童装',
-      key: 'tel18812165923',
-      secret: '20210302',
-      page: 5
-    },
+    url: 'backdata.php',
     success: function (data) {
-      console.log(template('template', data.items));
-      console.log(data);
-      $('.home #gallery-wrapper').append(template('template', data.items));
+      // console.log(data);
+      // console.log(template('template', data));
+      $('.home #gallery-wrapper').append(template('template', data));
+      // 添加到购物车
+      $('.white-panel .btm .addcar').on('click', function () {
+        // 创建小li
+        var li = $('<li><input type = "checkbox" class="checkbox_single"><div class="imgbox"><img src="' + $(this).parent().siblings('.thumb').prop('src') + '" alt=""></div><div class="details"><div class="details_title">' + $(this).parent().siblings('p').text() + '</div><div class="details_sort">' + $(this).parent().siblings('h2').text() + '</div><div class="details_price"><span class="good_price">' + $(this).siblings('h3').text() + '</span><div class="btn"><button class="decrement">-</button><span class="number">1</span><button class="increment">+</button></div></div></div></li>');
+        // console.log(li);
+        // 添加到ul里
+        $('.shopcar ul').append(li);
+        //8.购物车为空,显示背景图片
+        if ($('.shopcar ul li').length === 0) {
+          $('.shopcar .box').css('visibility', 'hidden');
+          $('.shopcar .bigbg').show();
+        } else {
+          $('.shopcar .box').css('visibility', 'visible');
+          $('.shopcar .bigbg').hide();
+        }
+        // 商品数量
+        $('.shopcar .box span').html($('.shopcar ul li').length);
+        // 单个复选框被选中的个数等于商品个数时，全选状态为选中
+        var goodsnum = $('.shopcar ul li').length;
+        $('ul li .checkbox_single').on('change', function () {
+          // 单个复选框被选中的个数
+          var checkednum = $('ul li .checkbox_single:checked').length;
+          if (checkednum === goodsnum) {
+            $('.shopcar .footer .left .checkbox_multi').prop('checked', true);
+          } else {
+            $('.shopcar .footer .left .checkbox_multi').prop('checked', false);
+          }
+          totalPrice();
+        })
+        // 3.增加减少商品数量
+        // 拿到当前商品的单价
+        var unit_price = parseInt($('.good_price').text().substr(1));
+        $('ul li .details .details_price .btn .increment').on('click', function () {
+          var goodnum = $(this).siblings('.number').html();
+          goodnum++;
+          $(this).siblings('.number').html(goodnum);
+          // 4.商品价格变化
+          // 与数量相乘,得到总价
+          $(this).parent().siblings('.good_price').text('￥' + (unit_price * goodnum).toFixed(2));
+          // 调用求和
+          totalPrice();
+        })
+        $('ul li .details .details_price .btn .decrement').on('click', function () {
+          var goodnum = $(this).siblings('.number').html();
+          if (goodnum <= 1) {
+            return false;
+          } else {
+            goodnum--;
+            $(this).siblings('.number').html(goodnum);
+            // 4.商品价格变化
+            $(this).parent().siblings('.good_price').text('￥' + (unit_price * goodnum).toFixed(2))
+            // 调用求和
+            totalPrice();
+          }
+        })
+      })
     }
   })
   // 返回顶部
@@ -158,7 +218,7 @@ $(function () {
         }
         // 商品数量
         goodsnum = $('.shopcar ul li').length;
-        $('.shopcar .box span').html(goodsnum)
+        $('.shopcar .box span').html(goodsnum);
       })
     } else {
       $('.shopcar .footer .right').stop().show().siblings('.del').stop().hide();
@@ -169,4 +229,9 @@ $(function () {
   $('.shopcar .bigbg .seemore').on('click', function () {
     window.location.href = '../index.html';
   })
+  // 8.购物车为空,显示背景图片
+  if ($('.shopcar ul li').length === 0) {
+    $('.shopcar .box').css('visibility', 'hidden');
+    $('.shopcar .bigbg').show();
+  }
 })

@@ -238,30 +238,33 @@ nav a span {
   float: left;
 }
 /* 瀑布流商品模块 */
-#gallery-wrapper {
-  position: relative;
-  max-width: 100%;
-  width: 100%;
-  margin-bottom: 1.6rem;
+  #gallery-wrapper {
+    position: relative;
+    max-width: 100%;
+    width: 100%;
+    margin-bottom: 1.6rem;
   }
   img.thumb {
-  width: 100%;
-  max-width: 100%;
-  height: auto;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
   }
   .white-panel {
-  position: absolute;
-  background: white;
-  border-radius: .133333rem;
-  box-shadow: 0px .026667rem .053333rem rgba(0,0,0,0.3);
-  padding: .266667rem;
+    position: absolute;
+    background: white;
+    border-radius: .133333rem;
+    box-shadow: 0px .026667rem .053333rem rgba(0,0,0,0.3);
+    padding: .266667rem;
   }
-  .white-panel h1 {
-  font-size: .533333rem;
-  margin: .053333rem 0;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  .white-panel h2{
+    font-size: .426667rem;
+    margin: .053333rem 0;
+    height: .666667rem;
+    line-height: .8rem;
+    font-weight: normal;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
   .white-panel p{
     font-size: .4rem;
@@ -274,14 +277,24 @@ nav a span {
   }
   .white-panel .btm{
     display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: .8rem;
+    line-height: .8rem;
+  }
+  .white-panel .btm h3{
+    font-size: .533333rem;
+    color: #ff0036;
   }
   .white-panel .btm .addcar{
-    line-height: 1.2rem;
+    height: .8rem;
+    line-height: .8rem;
   }
   .white-panel .btm .addcar::after{
     content: '\e910';
     font-family: 'icomoon';
     color: #ff4d2d;
+    font-size: .533333rem;
   }
   /* .white-panel:hover {
   box-shadow: .026667rem .026667rem .266667rem rgba(0,0,0,0.5);
