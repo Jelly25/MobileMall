@@ -113,6 +113,6 @@ $(function () {
   })
   // 9.去逛逛
   $('.shopcar .bigbg .seemore').on('click', function () {
-
+    window.location.href = '../index.html';
   })
 })
