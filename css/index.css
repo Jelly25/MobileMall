@@ -65,14 +65,18 @@
   background-color: #63ecec;
   z-index: 999;
 }
-.search-content .classify,
+.search-content .brand,
 .search-content .login{
-  width: .48rem;
+  width: .8rem;
   height: .8rem;
 }
-.search-content .classify img,
-.search-content .login img{
-  width: .48rem;
+.search-content .login{
+  font-size: .4rem;
+  line-height: .8rem;
+  color: #333;
+}
+.search-content .brand img{
+  width: .8rem;
   height: .8rem;
 }
 .search-content .search{
@@ -80,7 +84,7 @@
   overflow: hidden;
   flex: 1;
   height: .8rem;
-  margin: 0 .586667rem;
+  margin: 0 .4rem;
   background-color: #fff;
   border-radius: .4rem;
 }
@@ -100,6 +104,7 @@
   padding: 0 .266667rem 0 .866667rem;
   font-size: .373333rem;
   line-height: .8rem;
+  color: #555;
 }
 /* swiper */
 .swiper-container {

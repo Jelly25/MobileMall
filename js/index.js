@@ -9,6 +9,24 @@ $(function () {
     $(this).addClass('current').siblings().removeClass('current')
   })
   // 首页页面逻辑
+  // 搜索框获得焦点，value值为空，失去焦点value值为默认内容
+  $('.search-content .search input').on('focus', function () {
+    $(this).val('');
+    $(this).prop('placeholder', '');
+  });
+  $('.search-content .search input').on('blur', function () {
+    $(this).prop('placeholder', '儿童服饰春季上新');
+  });
+  // 点击搜索进入搜索页面
+  $('.search-content .login').on('click', function () {
+    var keywords = $(this).siblings('.search').find('input').val();
+    if (keywords === '') {
+      alert('请输入要查询的商品');
+      return false;
+    } else {
+      window.location.href = '../search.html?key=' + keywords;
+    }
+  })
   // 功能入口
   $('.home nav').on('click', 'a', function () {
     alert('该功能模块暂未开放，敬请期待')
