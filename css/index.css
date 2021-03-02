@@ -242,6 +242,7 @@ nav a span {
   } */
   /* 返回顶部按钮 */
   .backTop{
+    display: none;
     position: absolute;
     top: 26.666667rem;
     left: 50%;

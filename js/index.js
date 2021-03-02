@@ -35,9 +35,32 @@ $(function () {
   $('.recommend_top span').on('click', function () {
     $(this).parent().siblings('.recommend_bottom').children('img').prop('src', 'upload/recommend2.gif')
   })
-  // 购物车页面逻辑
-  // 页面padding-bottom
+  // ajax请求数据
 
+  // 返回顶部
+  // 页面添加滚动事件
+  $(window).on('scroll', function () {
+    // 当页面卷去头部距离大于瀑布流商品的offsetTop值时，返回顶部按钮显示，固定定位，否则隐藏
+    if ($(this).scrollTop() >= $('.home #gallery-wrapper').offset().top) {
+      $('.home .backTop').stop().fadeIn();
+      $('.home .backTop').css({
+        position: 'fixed',
+        top: 500,
+        zIndex: 999
+      });
+      // backTOP添加点击事件
+      $('.home .backTop').on('click', function () {
+        // 给html和body添加animate动画
+        $('html,body').stop().animate({
+          scrollTop: 0
+        })
+      })
+    } else {
+      $('.home .backTop').stop().fadeOut();
+    }
+  })
+
+  // 购物车页面逻辑
   // 1.购物车商品数量
   var goodsnum = $('.shopcar ul li').length;
   $('.shopcar .box span').html(goodsnum);
