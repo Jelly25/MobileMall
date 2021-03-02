@@ -204,12 +204,45 @@ nav a span {
   width: 100%;
   height: 100%;
 }
+/* 滚动条 */
+.home .scroll_bar{
+  display: flex;
+  justify-content: space-between;
+  width: 10rem;
+  height: .8rem;
+  border: .013333rem solid #ccc;
+  background-color: #fff;
+}
+.home .scroll_bar .icon{
+  width: 1.2rem;
+  line-height: .8rem;
+  text-align: center;
+}
+.home .scroll_bar .icon::after{
+  content: '\e911';
+  font-family: 'icomoon';
+}
+.home .scroll_bar .scroll{
+  width: 8.8rem;
+  overflow: hidden;
+  font-size: .533333rem;
+}
+.home .scroll_bar .scroll .inscroll{
+  width:300%;
+}
+.home .scroll_bar .scroll .scroll1,
+.home .scroll_bar .scroll .scroll2{
+  width: 8.8rem;
+  height: 100%;
+  line-height: .8rem;
+  float: left;
+}
 /* 瀑布流商品模块 */
 #gallery-wrapper {
   position: relative;
   max-width: 100%;
   width: 100%;
-  margin-bottom: 1.333333rem;
+  margin-bottom: 1.6rem;
   }
   img.thumb {
   width: 100%;
@@ -224,13 +257,31 @@ nav a span {
   padding: .266667rem;
   }
   .white-panel h1 {
-  font-size: 1em;
+  font-size: .533333rem;
+  margin: .053333rem 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
   }
   .white-panel p{
-    font-size: .16rem!important;
+    font-size: .4rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    color: #555;
   }
-  .white-panel h1 a {
-  color: #A92733;
+  .white-panel .btm{
+    display: flex;
+  }
+  .white-panel .btm .addcar{
+    line-height: 1.2rem;
+  }
+  .white-panel .btm .addcar::after{
+    content: '\e910';
+    font-family: 'icomoon';
+    color: #ff4d2d;
   }
   /* .white-panel:hover {
   box-shadow: .026667rem .026667rem .266667rem rgba(0,0,0,0.5);

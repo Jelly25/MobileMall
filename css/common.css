@@ -21,7 +21,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  touch-action: pan-y
+  touch-action: pan-y;
 }
 li{
   list-style: none;

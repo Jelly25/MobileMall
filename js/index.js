@@ -36,7 +36,13 @@ $(function () {
     $(this).parent().siblings('.recommend_bottom').children('img').prop('src', 'upload/recommend2.gif')
   })
   // ajax请求数据
-
+  $.ajax({
+    url: '../php/backdata.php',
+    success: function (data) {
+      console.log(template('template', data));
+      console.log(data);
+    }
+  })
   // 返回顶部
   // 页面添加滚动事件
   $(window).on('scroll', function () {

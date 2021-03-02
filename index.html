@@ -149,82 +149,25 @@
           <img data-lazy-src="upload/recommend1.gif" alt="">
         </div>
       </section>
+      <!-- 滚动条 -->
+      <div class="scroll_bar">
+        <span class="icon"></span>
+        <div class="scroll">
+          <div class="inscroll">
+            <div class="scroll1">春季上新,潮牌来袭,会员享福利！</div>
+            <div class="scroll2"></div>
+          </div>
+        </div>
+      </div>
       <!-- 瀑布流商品模块 -->
       <section id="gallery-wrapper">
         <article class="white-panel">
           <img data-lazy-src="img/1.jpg" class="thumb">
-          <h1><a href="#">Title 1</a></h1>
-          <p>Description 1</p>
-        </article>
-        <article class="white-panel">
-          <img data-lazy-src="img/2.jpg" class="thumb">
-          <h1><a href="#">Title 2</a></h1>
-          <p>Description 2</p>
-        </article>
-        <article class="white-panel">
-          <img data-lazy-src="img/3.jpg" class="thumb">
-          <h1><a href="#">Title 3</a></h1>
-          <p>Description 3</p>
-        </article>
-        <article class="white-panel">
-          <img data-lazy-src="img/4.jpg" class="thumb">
-          <h1><a href="#">Title 4</a></h1>
-          <p>Description 4</p>
-        </article>
-        <article class="white-panel">
-          <img data-lazy-src="img/5.jpg" class="thumb">
-          <h1><a href="#">Title 5</a></h1>
-          <p>Description 5</p>
-        </article>
-        <article class="white-panel">
-          <img data-lazy-src="img/6.jpg" class="thumb">
-          <h1><a href="#">Title 6</a></h1>
-          <p>Description 6</p>
-        </article>
-        <article class="white-panel">
-          <img data-lazy-src="img/7.jpg" class="thumb">
-          <h1><a href="#">Title 7</a></h1>
-          <p>Description 7</p>
-        </article>
-        <article class="white-panel">
-          <img data-lazy-src="img/8.jpg" class="thumb">
-          <h1><a href="#">Title 8</a></h1>
-          <p>Description 8</p>
-        </article>
-        <article class="white-panel">
-          <img data-lazy-src="img/9.jpg" class="thumb">
-          <h1><a href="#">Title 9</a></h1>
-          <p>Description 9</p>
-        </article>
-        <article class="white-panel">
-          <img data-lazy-src="img/10.jpg" class="thumb">
-          <h1><a href="#">Title 10</a></h1>
-          <p>Description 10</p>
-        </article>
-        <article class="white-panel">
-          <img data-lazy-src="img/11.jpg" class="thumb">
-          <h1><a href="#">Title 11</a></h1>
-          <p>Description 11</p>
-        </article>
-        <article class="white-panel">
-          <img data-lazy-src="img/12.jpg" class="thumb">
-          <h1><a href="#">Title 12</a></h1>
-          <p>Description 12</p>
-        </article>
-        <article class="white-panel">
-          <img data-lazy-src="img/13.jpg" class="thumb">
-          <h1><a href="#">Title 13</a></h1>
-          <p>Description 13</p>
-        </article>
-        <article class="white-panel">
-          <img data-lazy-src="img/14.jpg" class="thumb">
-          <h1><a href="#">Title 14</a></h1>
-          <p>Description 14</p>
-        </article>
-        <article class="white-panel">
-          <img data-lazy-src="img/15.jpg" class="thumb">
-          <h1><a href="#">Title 15</a></h1>
-          <p>Description 15</p>
+          <h1>mojito</h1>
+          <div class="btm">
+            <p>春季上新新品来袭大量儿童服装鞋子帽子裤子等特惠商品速来抢购</p>
+            <span class="addcar"></span>
+          </div>
         </article>
       </section>
       <!-- 返回顶部 -->
@@ -402,4 +345,32 @@
     //   console.log("onLoadBackStart:" + i);
     // }
   });
+  //滚动条
+  var speed = 10;//数字越大越慢
+  var demo = document.querySelector(".scroll");
+  var demo1 = document.querySelector(".scroll1");
+  var demo2 = document.querySelector(".scroll2");
+  demo2.innerHTML = demo1.innerHTML;
+  function marquee() {
+    if (demo.scrollLeft >= demo1.offsetWidth) {
+      demo.scrollLeft = 0;
+    } else {
+      demo.scrollLeft++;
+    }
+  };
+  setInterval(marquee, speed);
+</script>
+<!-- 模板引擎 -->
+<script src="js/template-web.js"></script>
+<script type="text/html" id="template">
+  {{each items}}
+  <article class="white-panel">
+    <img data-lazy-src="img/1.jpg" class="thumb">
+    <h1>mojito</h1>
+    <div class="btm">
+      <p>春季上新新品来袭大量儿童服装鞋子帽子裤子等特惠商品速来抢购</p>
+      <span class="addcar"></span>
+    </div>
+  </article>
+  {{/each}}
 </script>
