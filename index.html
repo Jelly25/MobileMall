@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no">
+  <title>移动商城</title>
+  <meta name="description" content="专注于儿童服装">
+  <meta name="keywords" content="儿童、童装、鞋子、服饰">
+  <!-- 引入normalize初始化文件 -->
+  <link rel="stylesheet" href="css/normalize.css">
+  <!-- 引入swiper.css -->
+  <link rel="stylesheet" href="css/swiper.min.css">
+  <!-- 引入瀑布流default.css -->
+  <link rel="stylesheet" href="css/default.css">
+  <!-- 引入公共样式common.css -->
+  <link rel="stylesheet" href="css/common.css">
+  <!-- 引入index.css -->
+  <link rel="stylesheet" href="css/index.css">
+  <!-- 引入flexible.js -->
+  <script src="js/flexible.min.js"></script>
+  <!-- 引入jQuery -->
+  <script src="js/jQuery.min.js"></script>
+  <!-- 引入fastclick.js 解决移动端300ms延时 -->
+  <script src='js/fastclick.js'></script>
+  <!-- 引入swiper.js -->
+  <script src="js/swiper.min.js"></script>
+  <!-- 引入pinterest_grid.js瀑布流插件 -->
+  <script src="js/pinterest_grid.js"></script>
+  <!-- 引入index.js -->
+  <script src="js/index.js"></script>
+</head>
+
+<body>
+  <!-- 底部tab栏 -->
+  <div class="tab_list">
+    <div class="item current">
+      <em></em>
+      <span>首页</span>
+    </div>
+    <div class="item">
+      <em></em>
+      <span>分类</span>
+    </div>
+    <div class="item">
+      <em class="vip"></em>
+      <span>会员</span>
+    </div>
+    <div class="item">
+      <em></em>
+      <span>购物车</span>
+    </div>
+    <div class="item">
+      <em></em>
+      <span>我的</span>
+    </div>
+  </div>
+  <!-- 页面内容 -->
+  <div class="tab_con">
+    <!-- 首页 -->
+    <div class="item home">
+      <!-- 搜索框 -->
+      <div class="search-content">
+        <a href="javaScript:;" class="classify">
+          <img data-lazy-src="images/classify.png" alt="">
+        </a>
+        <div class="search">
+          <form action="">
+            <input type="text" placeholder="儿童服饰春季上新">
+          </form>
+        </div>
+        <a href="javaScript:;" class="login">
+          <img data-lazy-src="images/login.png" alt="">
+        </a>
+      </div>
+      <!-- Swiper -->
+      <div class="swiper-container">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <img data-lazy-src="upload/01.jpg" alt="">
+          </div>
+          <div class="swiper-slide">
+            <img data-lazy-src="upload/02.jpg" alt="">
+          </div>
+          <div class="swiper-slide">
+            <img data-lazy-src="upload/03.jpg" alt="">
+          </div>
+          <div class="swiper-slide">
+            <img data-lazy-src="upload/04.jpg" alt="">
+          </div>
+          <div class="swiper-slide">
+            <img data-lazy-src="upload/05.jpg" alt="">
+          </div>
+        </div>
+        <!-- 分页 -->
+        <div class="swiper-pagination"></div>
+      </div>
+      <!-- nav部分 -->
+      <nav>
+        <a href="javaScript:;">
+          <img data-lazy-src="images/nav-icon1.png" alt="">
+          <span>春季上新</span>
+        </a>
+        <a href="javaScript:;">
+          <img data-lazy-src="images/nav-icon2.png" alt="">
+          <span>儿童潮牌</span>
+        </a>
+        <a href="javaScript:;">
+          <img data-lazy-src="images/nav-icon3.png" alt="">
+          <span>特价抢购</span>
+        </a>
+        <a href="javaScript:;">
+          <img data-lazy-src="images/nav-icon4.png" alt="">
+          <span>团购拼单</span>
+        </a>
+        <a href="javaScript:;">
+          <img data-lazy-src="images/nav-icon5.png" alt="">
+          <span>限时活动</span>
+        </a>
+        <a href="javaScript:;">
+          <img data-lazy-src="images/nav-icon6.png" alt="">
+          <span>亲子套装</span>
+        </a>
+        <a href="javaScript:;">
+          <img data-lazy-src="images/nav-icon7.gif" alt="">
+          <span>super会员</span>
+        </a>
+        <a href="javaScript:;">
+          <img data-lazy-src="images/nav-icon8.png" alt="">
+          <span>签到有礼</span>
+        </a>
+        <a href="javaScript:;">
+          <img data-lazy-src="images/nav-icon9.png" alt="">
+          <span>领券中心</span>
+        </a>
+        <a href="javaScript:;">
+          <img data-lazy-src="images/nav-icon10.png" alt="">
+          <span>直播抢货</span>
+        </a>
+      </nav>
+      <!-- 推荐模块 -->
+      <section class="recommend">
+        <div class="recommend_top">
+          <h4>猜你喜欢</h4>
+          <span>换一批</span>
+        </div>
+        <div class="recommend_bottom">
+          <img data-lazy-src="upload/recommend1.gif" alt="">
+        </div>
+      </section>
+      <!-- 瀑布流商品模块 -->
+      <section id="gallery-wrapper">
+        <article class="white-panel">
+          <img data-lazy-src="img/1.jpg" class="thumb">
+          <h1><a href="#">Title 1</a></h1>
+          <p>Description 1</p>
+        </article>
+        <article class="white-panel">
+          <img data-lazy-src="img/2.jpg" class="thumb">
+          <h1><a href="#">Title 2</a></h1>
+          <p>Description 2</p>
+        </article>
+        <article class="white-panel">
+          <img data-lazy-src="img/3.jpg" class="thumb">
+          <h1><a href="#">Title 3</a></h1>
+          <p>Description 3</p>
+        </article>
+        <article class="white-panel">
+          <img data-lazy-src="img/4.jpg" class="thumb">
+          <h1><a href="#">Title 4</a></h1>
+          <p>Description 4</p>
+        </article>
+        <article class="white-panel">
+          <img data-lazy-src="img/5.jpg" class="thumb">
+          <h1><a href="#">Title 5</a></h1>
+          <p>Description 5</p>
+        </article>
+        <article class="white-panel">
+          <img data-lazy-src="img/6.jpg" class="thumb">
+          <h1><a href="#">Title 6</a></h1>
+          <p>Description 6</p>
+        </article>
+        <article class="white-panel">
+          <img data-lazy-src="img/7.jpg" class="thumb">
+          <h1><a href="#">Title 7</a></h1>
+          <p>Description 7</p>
+        </article>
+        <article class="white-panel">
+          <img data-lazy-src="img/8.jpg" class="thumb">
+          <h1><a href="#">Title 8</a></h1>
+          <p>Description 8</p>
+        </article>
+        <article class="white-panel">
+          <img data-lazy-src="img/9.jpg" class="thumb">
+          <h1><a href="#">Title 9</a></h1>
+          <p>Description 9</p>
+        </article>
+        <article class="white-panel">
+          <img data-lazy-src="img/10.jpg" class="thumb">
+          <h1><a href="#">Title 10</a></h1>
+          <p>Description 10</p>
+        </article>
+        <article class="white-panel">
+          <img data-lazy-src="img/11.jpg" class="thumb">
+          <h1><a href="#">Title 11</a></h1>
+          <p>Description 11</p>
+        </article>
+        <article class="white-panel">
+          <img data-lazy-src="img/12.jpg" class="thumb">
+          <h1><a href="#">Title 12</a></h1>
+          <p>Description 12</p>
+        </article>
+        <article class="white-panel">
+          <img data-lazy-src="img/13.jpg" class="thumb">
+          <h1><a href="#">Title 13</a></h1>
+          <p>Description 13</p>
+        </article>
+        <article class="white-panel">
+          <img data-lazy-src="img/14.jpg" class="thumb">
+          <h1><a href="#">Title 14</a></h1>
+          <p>Description 14</p>
+        </article>
+        <article class="white-panel">
+          <img data-lazy-src="img/15.jpg" class="thumb">
+          <h1><a href="#">Title 15</a></h1>
+          <p>Description 15</p>
+        </article>
+      </section>
+      <!-- 返回顶部 -->
+      <div class="backTop">
+      </div>
+    </div>
+    <!-- 分类页 -->
+    <div class="item category">2</div>
+    <!-- 会员页 -->
+    <div class="item vip">3</div>
+    <!-- 购物车页 -->
+    <div class="item shopcar">
+      <header class="header">
+        <h2>购物车</h2>
+        <span>管理</span>
+      </header>
+      <div class="box">
+        <p>共<span>0</span>件商品</p>
+      </div>
+      <!-- 购物车列表 -->
+      <ul>
+        <li>
+          <input type="checkbox" class="checkbox_single">
+          <div class="imgbox">
+            <img data-lazy-src="images/shopcar1.jpg" alt="">
+          </div>
+          <div class="details">
+            <div class="details_title">ZARA 新款 童装男童 反光条纹带饰袋鼠口袋夹克外套 05644661800</div>
+            <div class="details_sort">颜色:白色/黑色/蓝色/米奇色 尺寸:/S/M/L/XL</div>
+            <div class="details_price">
+              <span class="good_price">￥50.00</span>
+              <div class="btn">
+                <button class="decrement">-</button>
+                <span class="number">1</span>
+                <button class="increment">+</button>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li>
+          <input type="checkbox" class="checkbox_single">
+          <div class="imgbox">
+            <img data-lazy-src="images/shopcar1.jpg" alt="">
+          </div>
+          <div class="details">
+            <div class="details_title">ZARA 新款 童装男童 反光条纹带饰袋鼠口袋夹克外套 05644661800</div>
+            <div class="details_sort">颜色:白色/黑色/蓝色/米奇色 尺寸:/S/M/L/XL</div>
+            <div class="details_price">
+              <span class="good_price">￥50.00</span>
+              <div class="btn">
+                <button class="decrement">-</button>
+                <span class="number">1</span>
+                <button class="increment">+</button>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li>
+          <input type="checkbox" class="checkbox_single">
+          <div class="imgbox">
+            <img data-lazy-src="images/shopcar1.jpg" alt="">
+          </div>
+          <div class="details">
+            <div class="details_title">ZARA 新款 童装男童 反光条纹带饰袋鼠口袋夹克外套 05644661800</div>
+            <div class="details_sort">颜色:白色/黑色/蓝色/米奇色 尺寸:/S/M/L/XL</div>
+            <div class="details_price">
+              <span class="good_price">￥50.00</span>
+              <div class="btn">
+                <button class="decrement">-</button>
+                <span class="number">1</span>
+                <button class="increment">+</button>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li>
+          <input type="checkbox" class="checkbox_single">
+          <div class="imgbox">
+            <img data-lazy-src="images/shopcar1.jpg" alt="">
+          </div>
+          <div class="details">
+            <div class="details_title">ZARA 新款 童装男童 反光条纹带饰袋鼠口袋夹克外套 05644661800</div>
+            <div class="details_sort">颜色:白色/黑色/蓝色/米奇色 尺寸:/S/M/L/XL</div>
+            <div class="details_price">
+              <span class="good_price">￥50.00</span>
+              <div class="btn">
+                <button class="decrement">-</button>
+                <span class="number">1</span>
+                <button class="increment">+</button>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li>
+          <input type="checkbox" class="checkbox_single">
+          <div class="imgbox">
+            <img data-lazy-src="images/shopcar1.jpg" alt="">
+          </div>
+          <div class="details">
+            <div class="details_title">ZARA 新款 童装男童 反光条纹带饰袋鼠口袋夹克外套 05644661800</div>
+            <div class="details_sort">颜色:白色/黑色/蓝色/米奇色 尺寸:/S/M/L/XL</div>
+            <div class="details_price">
+              <span class="good_price">￥50.00</span>
+              <div class="btn">
+                <button class="decrement">-</button>
+                <span class="number">1</span>
+                <button class="increment">+</button>
+              </div>
+            </div>
+          </div>
+        </li>
+      </ul>
+      <!-- 购物车背景图片 -->
+      <section class="bigbg">
+        <div class="bigbg_main"></div>
+        <div class="bigbg_title">您的购物车空空如也~</div>
+        <div class="seemore">去逛逛</div>
+      </section>
+      <!-- 结算导航 -->
+      <footer class="footer">
+        <div class="left">
+          <input type="checkbox" class="checkbox_multi" id="checkbox_multi">
+          <label for="checkbox_multi" class="all">全选</label>
+        </div>
+        <div class="right">
+          <div>合计:<span class="total_price">￥0.00</span></div>
+          <div class="checkout">结算</div>
+        </div>
+        <div class="del">移除</div>
+      </footer>
+    </div>
+    <!-- 我的 -->
+    <div class="item profile">
+
+    </div>
+  </div>
+</body>
+
+</html>
+<!-- 引入图片懒加载 -->
+<script src="js/EasyLazyload.min.js"></script>
+<script>
+  // swiper
+  var swiper = new Swiper('.swiper-container', {
+    spaceBetween: 30,
+    centeredSlides: true,
+    autoplay: {
+      delay: 2500,
+      disableOnInteraction: false,
+    },
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: false,
+    },
+  });
+  // 瀑布流
+  $(function () {
+    $("#gallery-wrapper").pinterest_grid({
+      no_columns: 2,
+      padding_x: 0,
+      padding_y: 5,
+      margin_bottom: 50,
+      single_column_breakpoint: 320
+    });
+
+  });
+  // 懒加载
+  lazyLoadInit({
+    showTime: 500,
+    offsetBottom: 0,
+    offsetTopm: 0,
+    // onLoadBackEnd: function (i, e) {
+    //   console.log("onLoadBackEnd:" + i);
+    // }
+    // , onLoadBackStart: function (i, e) {
+    //   console.log("onLoadBackStart:" + i);
+    // }
+  });
+</script>
