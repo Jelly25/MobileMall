@@ -37,10 +37,17 @@ $(function () {
   })
   // ajax请求数据
   $.ajax({
-    url: '../php/backdata.php',
+    url: 'https://api-gw.onebound.cn/taobao/item_search/',
+    data: {
+      q: '童装',
+      key: 'tel18812165923',
+      secret: '20210302',
+      page: 5
+    },
     success: function (data) {
-      console.log(template('template', data));
+      console.log(template('template', data.items));
       console.log(data);
+      $('.home #gallery-wrapper').append(template('template', data.items));
     }
   })
   // 返回顶部

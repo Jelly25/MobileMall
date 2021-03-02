@@ -363,12 +363,12 @@
 <!-- 模板引擎 -->
 <script src="js/template-web.js"></script>
 <script type="text/html" id="template">
-  {{each items}}
+  {{each item}}
   <article class="white-panel">
-    <img data-lazy-src="img/1.jpg" class="thumb">
-    <h1>mojito</h1>
+    <img data-lazy-src="{{$value.pic_url}}" class="thumb">
+    <h1>{{$value.seller_nick}}</h1>
     <div class="btm">
-      <p>春季上新新品来袭大量儿童服装鞋子帽子裤子等特惠商品速来抢购</p>
+      <p>{{$value.title}}</p>
       <span class="addcar"></span>
     </div>
   </article>
