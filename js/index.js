@@ -133,6 +133,16 @@ $(function () {
     }
   })
 
+  // 分类页面逻辑
+  $('.category .category_list .item_list').on('click', function () {
+    var idx = $(this).index();
+    $(this).addClass('active').siblings().removeClass('active');
+    $('.category .category_con .item_con').eq(idx).stop().show().siblings().stop().hide();
+  })
+
+  // 服务页面逻辑
+
+
   // 购物车页面逻辑
   // 1.购物车商品数量
   var goodsnum = $('.shopcar ul li').length;

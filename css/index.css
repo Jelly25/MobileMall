@@ -326,6 +326,108 @@ nav a span {
     z-index: 99;
     opacity: .8;
   }
+  /* 分类模块 */
+  .category{
+    width: 10rem;
+  }
+  .category .category_list{
+    float: left;
+    width: 2.666667rem;
+    height: 16.186667rem;
+    background-color: #ddd;
+  }
+  .category .category_list .item_list{
+    text-align: center;
+    height: .8rem;
+    line-height: .8rem;
+    margin: .533333rem 0;
+    font-size: .533333rem;
+  }
+  .category .category_con{
+    width: 7.333333rem;
+    float: right;
+    background-color: #ddd;
+  }
+  .category .category_con .item_con:nth-child(n+2){
+    display: none;
+  }
+  .category .category_con .item_con{
+    height: 16.186667rem;
+    overflow:hidden;
+    overflow-y: scroll;
+  }
+  .category .category_con .item_con .first_con{
+    width: 95%;
+    height: 5.333333rem;
+    margin: .266667rem auto;
+    background-color: #fff;
+    border-radius: .266667rem;
+  }
+  .first_con .little_title{
+    text-align: center;
+    height: .8rem;
+    font-size: .533333rem;
+    font-weight: 700;
+  }
+  .first_con .goods{
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .first_con .goods .goodsitem{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 33.33%;
+  }
+  .first_con .goods .goodsitem img{
+    width: 1.6rem;
+    height: 1.6rem;
+  }
+  .first_con .goods .goodsitem span{
+    margin-top: .106667rem;
+    font-size: .4rem;
+  }
+  .active{
+    color:#f83030;
+    border-left: .08rem solid #f83030;
+    font-weight: 700;
+  }
+  /* 会员模块 */
+  .vip .toptitle{
+    width: 10rem;
+    height: 1.066667rem;
+    line-height: 1.066667rem;
+    background-color: #ddd;
+    text-align: center;
+    font-size: .533333rem;
+  }
+  .vip .limited{
+    display: flex;
+    flex-direction: column;
+    width: 95%;
+    height: 5.466667rem;
+    margin: .266667rem auto;
+    border-radius:0 0 .4rem .4rem;
+    overflow: hidden;
+  }
+  .vip .limited .tips{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: .106667rem;
+    font-size: .453333rem;
+  }
+  .vip .limited .tips span::after{
+    content: '\e913';
+    font-family: 'icomoon';
+    font-size: .453333rem;
+  }
+  .vip .limited .content{
+    flex:1;
+  }
+  .vip .limited .content img{
+    width: 100%;
+    height: 100%;
+  }
 
   /* 购物车模块 */
   .shopcar{
