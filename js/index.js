@@ -24,12 +24,12 @@ $(function () {
       alert('请输入要查询的商品');
       return false;
     } else {
-      window.location.href = '../search.html?key=' + keywords;
+      window.location.href = '/mobileWeb/search.html?key=' + keywords;
     }
   })
   // 功能入口
   $('.home nav').on('click', 'a', function () {
-    alert('该功能模块暂未开放，敬请期待')
+    alert('该功能模块暂未开放，敬请期待');
   })
   // 换一批
   var fa = 0;
@@ -227,7 +227,7 @@ $(function () {
   })
   // 9.去逛逛
   $('.shopcar .bigbg .seemore').on('click', function () {
-    window.location.href = '../index.html';
+    window.location.href = '/mobileWeb/index.html';
   })
   // 8.购物车为空,显示背景图片
   if ($('.shopcar ul li').length === 0) {
