@@ -260,11 +260,17 @@ nav a span {
     font-size: .426667rem;
     margin: .053333rem 0;
     height: .666667rem;
-    line-height: .8rem;
+    line-height: .666667rem;
     font-weight: normal;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+  }
+  .white-panel h2::before{
+    content: '\e914';
+    font-family: 'icomoon';
+    color: #f5331a;
+    margin-right: .133333rem;
   }
   .white-panel p{
     font-size: .4rem;
