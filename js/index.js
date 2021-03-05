@@ -140,8 +140,24 @@ $(function () {
     $('.category .category_con .item_con').eq(idx).stop().show().siblings().stop().hide();
   })
 
-  // 服务页面逻辑
-
+  // 会员页面逻辑
+  // 倒计时
+  var outtime = +new Date('2021-3-6 00:00:00');
+  countDown();
+  function countDown() {
+    var nowtime = +new Date();
+    var totalSeconds = (outtime - nowtime) / 1000;
+    var h = parseInt(totalSeconds / 60 / 60 % 24);
+    h = h < 10 ? '0' + h : h;
+    $('.acttitle .time .h').html(h);
+    var m = parseInt(totalSeconds / 60 % 60);
+    m = m < 10 ? '0' + m : m;
+    $('.acttitle .time .m').html(m);
+    var s = parseInt(totalSeconds % 60);
+    s = s < 10 ? '0' + s : s;
+    $('.acttitle .time .s').html(s);
+  }
+  setInterval(countDown, 1000);
 
   // 购物车页面逻辑
   // 1.购物车商品数量
